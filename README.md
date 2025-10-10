@@ -1,5 +1,7 @@
 # 📖 Windows Bookmark Backup Tool Professional
 
+-**Still beta testing**
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![.NET](https://img.shields.io/badge/.NET-8.0%20Self%20Contained-purple.svg)](https://dotnet.microsoft.com/download/dotnet/8.0)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010/11-blue.svg)](https://docs.microsoft.com/en-us/windows/)
@@ -10,8 +12,15 @@
 
 **Professional-grade Windows application for comprehensive browser bookmark management, backup, and automation.** Built with Avalonia UI for native Windows 10/11 performance. Features complete CLI support with 100% GUI parity, automated scheduling, and enterprise deployment options.
 
-
 ## 🎯 **Two Editions Available**
+
+✅ **Self-Contain**
+- BoomarkBackupTool-Full.exe - Self-contain with Scheduled 
+- BackupBoomarkBackupTool-Lite.exe - Self-contain without Scheduled Backup
+
+✅ **MsI Installer**
+- oomarkBackupTool-Full-Setup.msi - with Scheduled Backup
+- ackupBoomarkBackupTool-Lite-Setup.msi - Without Scheduled Backup 
 
 ### 📦 **Full Edition** - Complete Professional Suite
 - ✅ **Complete Bookmark Management** - Import, export, validate, and repair
@@ -36,8 +45,8 @@
 
 | **Installer Type** | **Full Edition** | **Lite Edition** | **Best For** |
 |---------------------|------------------|------------------|--------------|
-| **EXE (Inno Setup)** | `BookmarkBackupTool-Full-Setup.exe`<br/>32.75 MB | `BookmarkBackupTool-Lite-Setup.exe`<br/>32.74 MB | Individual users, direct download |
-| **MSI (Windows Installer)** | `BookmarkBackupTool-Full-Setup.msi`<br/>37.17 MB | `BookmarkBackupTool-Lite-Setup.msi`<br/>37.16 MB | Enterprise deployment, Group Policy |
+| **EXE (Inno Setup)** | `BookmarkBackupTool-Full-Setup.exe` | `BookmarkBackupTool-Lite-Setup.exe` | Individual users, direct download |
+| **MSI (Windows Installer)** | `BookmarkBackupTool-Full-Setup.msi` | `BookmarkBackupTool-Lite-Setup.msi` | Enterprise deployment, Group Policy |
 
 ### ✨ **Installer Features**
 - ✅ **Zero Prerequisites** - No .NET Runtime or dependencies needed
