@@ -6,7 +6,7 @@
 [![Release](https://img.shields.io/badge/Release-v2.0.0-green.svg)](https://github.com/your-repo/releases)
 [![Enterprise Ready](https://img.shields.io/badge/Enterprise-MSI%20%2B%20EXE-red.svg)](#-professional-installers)
 
-**Professional-grade Windows application for comprehensive browser bookmark management, backup, and automation.** Built with Avalonia UI for native Windows 10/11 performance. Features complete CLI support with 100% GUI parity, automated scheduling, and enterprise deployment options.
+**Professional-grade Windows application for comprehensive browser bookmark management, backup, and automation.** Built with Avalonia UI for native Windows 10/11 performance. Features CLI support with 100% GUI, automated scheduling, and enterprise deployment options.
 
 ## 🎯 **Two Editions Available**
 
