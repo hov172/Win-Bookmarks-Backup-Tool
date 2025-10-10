@@ -2,12 +2,8 @@
 
 -**Still beta testing**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![.NET](https://img.shields.io/badge/.NET-8.0%20Self%20Contained-purple.svg)](https://dotnet.microsoft.com/download/dotnet/8.0)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010/11-blue.svg)](https://docs.microsoft.com/en-us/windows/)
 [![Release](https://img.shields.io/badge/Release-v2.0.0-green.svg)](https://github.com/your-repo/releases)
-[![CLI Support](https://img.shields.io/badge/CLI-100%25%20Parity-brightgreen.svg)](#-command-line-interface)
-[![Self-Contained](https://img.shields.io/badge/Dependencies-Zero-orange.svg)](#-installation)
 [![Enterprise Ready](https://img.shields.io/badge/Enterprise-MSI%20%2B%20EXE-red.svg)](#-professional-installers)
 
 **Professional-grade Windows application for comprehensive browser bookmark management, backup, and automation.** Built with Avalonia UI for native Windows 10/11 performance. Features complete CLI support with 100% GUI parity, automated scheduling, and enterprise deployment options.
