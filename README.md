@@ -87,24 +87,6 @@ BookmarkBackupTool-Full --help
 - **🎨 12-Hour Time Format** - Consistent time display across UI
 - **🔄 Conditional Compilation** - Lite version excludes scheduler at build time
 
-## 📋 Table of Contents
-
-- [Recent Updates & Enhancements](#-recent-updates--enhancements)
-- [Quick Start](#-quick-start)  
-## 📚 **Table of Contents**
-
-- [🚀 Professional Installers](#-professional-installers)
-- [🔧 Installation](#-installation) 
-- [💻 Command Line Interface - Complete Feature Parity](#-command-line-interface---complete-feature-parity) ⭐ **FEATURED**
-- [🏢 Enterprise Automation Examples](#-enterprise-automation-examples)
-- [📋 System Requirements](#-system-requirements)
-- [✨ Core Features](#-core-features)
-- [🔧 Configuration](#-configuration)
-- [🏗️ Development](#️-development)
-- [📝 Documentation](#-documentation)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-
 ## 📝 **Documentation**
 
 - **[📖 Complete README](README.md)** - This comprehensive guide
