@@ -15,8 +15,8 @@
 - BackupBoomarkBackupTool-Lite.exe - Self-contain without Scheduled Backup
 
 ✅ **MsI Installer**
-- oomarkBackupTool-Full-Setup.msi - with Scheduled Backup
-- ackupBoomarkBackupTool-Lite-Setup.msi - Without Scheduled Backup 
+- boomarkBackupTool-Full-Setup.msi - with Scheduled Backup
+- backupBoomarkBackupTool-Lite-Setup.msi - Without Scheduled Backup 
 
 ### 📦 **Full Edition** - Complete Professional Suite
 - ✅ **Complete Bookmark Management** - Import, export, validate, and repair
