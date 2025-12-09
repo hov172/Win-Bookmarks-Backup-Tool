@@ -1,4 +1,4 @@
-# 📖 Bookmark Backup Tool Professional
+# <img src="app.ico" width="48" style="vertical-align: middle;"> Bookmark Backup Tool Professional
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![.NET](https://img.shields.io/badge/.NET-8.0%20Self%20Contained-purple.svg)](https://dotnet.microsoft.com/download/dotnet/8.0)
@@ -9,8 +9,6 @@
 [![Enterprise Ready](https://img.shields.io/badge/Enterprise-MSI%20%2B%20EXE-red.svg)](#-professional-installers)
 
 **Professional-grade Windows application for comprehensive browser bookmark management, backup, import, export, and automation.** Built with Avalonia UI for native Windows 10/11 performance. Features complete CLI support with 100% GUI parity, intelligent bookmark import/export with auto-detection, automated scheduling, and enterprise deployment options.
-
-![Bookmark Backup Tool](app.ico)
 
 ## 🎯 **Two Editions Available**
 
@@ -152,7 +150,6 @@ BookmarkBackupTool-Full --help
 - [📋 System Requirements](#-system-requirements)
 - [✨ Core Features](#-core-features)
 - [🔧 Configuration](#-configuration)
-- [🏗️ Development](#️-development)
 - [📝 Documentation](#-documentation)
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
