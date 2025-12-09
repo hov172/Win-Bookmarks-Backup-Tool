@@ -1,25 +1,23 @@
-# 📖 Windows Bookmark Backup Tool Professional
+# 📖 Bookmark Backup Tool Professional
 
--**Still beta testing**
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![.NET](https://img.shields.io/badge/.NET-8.0%20Self%20Contained-purple.svg)](https://dotnet.microsoft.com/download/dotnet/8.0)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010/11-blue.svg)](https://docs.microsoft.com/en-us/windows/)
-[![Release](https://img.shields.io/badge/Release-v2.0.0-green.svg)](https://github.com/your-repo/releases)
+[![Release](https://img.shields.io/badge/Release-v2.1.0-green.svg)](https://github.com/your-repo/releases)
+[![CLI Support](https://img.shields.io/badge/CLI-100%25%20Parity-brightgreen.svg)](#-command-line-interface)
+[![Self-Contained](https://img.shields.io/badge/Dependencies-Zero-orange.svg)](#-installation)
 [![Enterprise Ready](https://img.shields.io/badge/Enterprise-MSI%20%2B%20EXE-red.svg)](#-professional-installers)
 
-**Professional-grade Windows application for comprehensive browser bookmark management, backup, and automation.** Built with Avalonia UI for native Windows 10/11 performance. Features CLI support with 100% GUI, automated scheduling, and enterprise deployment options.
+**Professional-grade Windows application for comprehensive browser bookmark management, backup, import, export, and automation.** Built with Avalonia UI for native Windows 10/11 performance. Features complete CLI support with 100% GUI parity, intelligent bookmark import/export with auto-detection, automated scheduling, and enterprise deployment options.
+
+![Bookmark Backup Tool](app.ico)
 
 ## 🎯 **Two Editions Available**
 
-✅ **Self-Contain**
-- BoomarkBackupTool-Full.exe - Self-contain with Scheduled 
-- BackupBoomarkBackupTool-Lite.exe - Self-contain without Scheduled Backup
-
-✅ **MsI Installer**
-- boomarkBackupTool-Full-Setup.msi - with Scheduled Backup
-- backupBoomarkBackupTool-Lite-Setup.msi - Without Scheduled Backup 
-
 ### 📦 **Full Edition** - Complete Professional Suite
-- ✅ **Complete Bookmark Management** - Import, export, validate, and repair
+- ✅ **Complete Bookmark Management** - Import, export, validate, and repair with smart auto-detection
+- ✅ **Intelligent Import** - Auto-detects browser from file type and filename
+- ✅ **Smart File Filtering** - File picker shows only relevant formats based on selected browsers
 - ✅ **Automated Scheduling** - Daily/Weekly/Monthly backup automation  
 - ✅ **Complete CLI Interface** - 100% GUI parity for automation
 - ✅ **Enterprise Features** - Task management, logging, validation
@@ -27,7 +25,9 @@
 - **Size**: ~101MB self-contained (32.75MB installer)
 
 ### 📦 **Lite Edition** - Core Backup Features
-- ✅ **Essential Bookmark Management** - Import, export, validate, repair
+- ✅ **Essential Bookmark Management** - Import, export, validate, repair with smart auto-detection
+- ✅ **Intelligent Import** - Auto-detects browser from file type and filename
+- ✅ **Smart File Filtering** - File picker shows only relevant formats based on selected browsers
 - ✅ **Complete CLI Interface** - Same powerful CLI as Full edition
 - ✅ **PATH Integration** - Global CLI commands from anywhere
 - ❌ **Automated Scheduling** - Scheduler features excluded
@@ -41,8 +41,8 @@
 
 | **Installer Type** | **Full Edition** | **Lite Edition** | **Best For** |
 |---------------------|------------------|------------------|--------------|
-| **EXE (Inno Setup)** | `BookmarkBackupTool-Full-Setup.exe` | `BookmarkBackupTool-Lite-Setup.exe` | Individual users, direct download |
-| **MSI (Windows Installer)** | `BookmarkBackupTool-Full-Setup.msi` | `BookmarkBackupTool-Lite-Setup.msi` | Enterprise deployment, Group Policy |
+| **EXE (Inno Setup)** | `BookmarkBackupTool-Full-Setup.exe`<br/>32.75 MB | `BookmarkBackupTool-Lite-Setup.exe`<br/>32.74 MB | Individual users, direct download |
+| **MSI (Windows Installer)** | `BookmarkBackupTool-Full-Setup.msi`<br/>37.17 MB | `BookmarkBackupTool-Lite-Setup.msi`<br/>37.16 MB | Enterprise deployment, Group Policy |
 
 ### ✨ **Installer Features**
 - ✅ **Zero Prerequisites** - No .NET Runtime or dependencies needed
@@ -63,7 +63,28 @@ BookmarkBackupTool-Full --version
 BookmarkBackupTool-Full --help
 ```
 
-## 🆕 **Version 2.0.0 - October 2025** 🎉
+## 🆕 **Version 2.1.0 - December 2025** 🎉
+
+### 🎯 **Smart Import Features** ⭐ **NEW**
+- **🧠 Intelligent Browser Auto-Detection** - Automatically detects target browser from file extension and filename
+  - `.sqlite` files → Auto-import to Firefox (no dialog)
+  - `.json` + filename contains "Chrome" → Auto-import to Chrome
+  - `.json` + only one Chromium browser selected → Auto-import to that browser
+- **📁 Smart File Type Filtering** - File picker shows only relevant formats based on selected browsers
+  - Only Chrome/Edge selected → Shows JSON files first
+  - Only Firefox selected → Shows SQLite files first
+  - Mixed selection → Shows all applicable formats
+- **💾 Last Export Path Memory** - Import file picker defaults to last export location for convenience
+- **🎨 Enhanced User Experience** - Seamless import workflow with minimal clicks
+
+### 💻 **Import/Export Enhancements**
+- **✅ Full Import Implementation** - Complete bookmark import functionality for all browsers
+- **🔄 Multi-Format Support** - JSON (Chrome/Edge), SQLite (Firefox), ZIP archives, HTML
+- **🛡️ Automatic Backups** - Creates timestamped backups before every import
+- **📊 Detailed Feedback** - Success/error dialogs with comprehensive information
+- **🎯 Context-Aware Dialogs** - Browser selection only shown when genuinely needed
+
+### 🏗️ **Previous Features (v2.0.0)**
 
 ### � **Major Features**
 - **🎯 Self-Contained Deployment** - Zero .NET Runtime dependency
@@ -86,6 +107,24 @@ BookmarkBackupTool-Full --help
 - **📍 Intelligent Path Selection** - Smart fallback hierarchy
 - **🎨 12-Hour Time Format** - Consistent time display across UI
 - **🔄 Conditional Compilation** - Lite version excludes scheduler at build time
+
+## 📋 Table of Contents
+
+- [Recent Updates & Enhancements](#-recent-updates--enhancements)
+- [Quick Start](#-quick-start)  
+## 📚 **Table of Contents**
+
+- [🚀 Professional Installers](#-professional-installers)
+- [🔧 Installation](#-installation) 
+- [💻 Command Line Interface - Complete Feature Parity](#-command-line-interface---complete-feature-parity) ⭐ **FEATURED**
+- [🏢 Enterprise Automation Examples](#-enterprise-automation-examples)
+- [📋 System Requirements](#-system-requirements)
+- [✨ Core Features](#-core-features)
+- [🔧 Configuration](#-configuration)
+- [🏗️ Development](#️-development)
+- [📝 Documentation](#-documentation)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
 
 ## 📝 **Documentation**
 
@@ -117,7 +156,6 @@ When reporting bugs, please include:
 - [Command Line Interface](#-command-line-interface)
 - [Configuration](#-configuration-file)
 - [Build Information](#-build-information)
-- [Development](#️-development)
 - [FAQ](#-frequently-asked-questions)
 - [Troubleshooting](#-troubleshooting)
 - [Contributing](#-contributing)
@@ -158,15 +196,17 @@ dotnet run
 
 ### Core Functionality
 - **Multi-Browser Support**: Chrome, Edge, and Firefox bookmark management
-- **Complete CLI Parity**: 100% of GUI features available via command line ⭐ **NEW!**
-- **Safe Import/Export**: Prevents operations while browsers are running
+- **Intelligent Import System**: Auto-detects browser from file type and filename ⭐ **NEW in v2.1!**
+- **Smart File Filtering**: Shows only relevant file types based on selected browsers ⭐ **NEW in v2.1!**
+- **Complete CLI Parity**: 100% of GUI features available via command line
+- **Safe Import/Export**: Automatic backups before import, prevents operations while browsers are running
 - **Enhanced Network Detection**: Comprehensive detection for domain environments and network paths
-- **Smart Path Selection**: Intelligent fallback hierarchy (Documents → AppData → Temp)
+- **Smart Path Selection**: Intelligent fallback hierarchy with last export path memory
 - **Profile Management**: Handle multiple browser profiles per user
-- **ZIP Archive Support**: Optional compression of exported bookmark files
+- **ZIP Archive Support**: Optional compression of exported bookmark files with import support
 - **Complete Task Scheduling**: Full CRUD operations for automated backup tasks (GUI & CLI)
 - **Non-Admin Compatible**: Works perfectly for regular users without administrator privileges
-- **Enterprise Automation**: Perfect for scripts, Group Policy deployment, and automated workflows ⭐ **NEW!**
+- **Enterprise Automation**: Perfect for scripts, Group Policy deployment, and automated workflows
 
 ### User Interface & Experience
 - **Professional Branding**: Custom bookmark-themed application icon
@@ -186,7 +226,7 @@ dotnet run
   - Enterprise automation with detailed exit codes and error handling
 - **Enterprise Network Support**: 
   - UNC path detection (`\\server\share` patterns)
-  - DNS domain validation (e.g., ADMIN.SLC.EDU)
+  - DNS domain validation (e.g., FQDN)
   - Mapped drive detection and registry-based network identification
   - Profile redirection support for roaming user profiles
 - **Robust Task Management**:
@@ -314,7 +354,7 @@ msiexec /i BookmarkBackupTool-Full-Setup.msi /quiet /norestart
 
 ## 💻 **Command Line Interface - Complete Feature Parity**
 
-**100% CLI parity with GUI features!** Every graphical function available via command line for automation, scripting, and enterprise deployment. **Commands work globally after installation thanks to PATH integration.**
+**100% CLI parity with GUI features!** Every graphical function available via command line for automation, scripting, and enterprise deployment. **Fully implemented and tested in v2.1.0.**
 
 ### 🎯 **Global CLI Access** 
 ```powershell
@@ -340,14 +380,17 @@ BookmarkBackupTool-Lite --version       # Lite Edition
 ```powershell
 # Comprehensive help with all commands and examples
 BookmarkBackupTool-Full --help
+BookmarkBackupTool-Full -h              # Short form
 
 # Version information and build details  
 BookmarkBackupTool-Full --version
 
-# List all detected browser profiles
-BookmarkBackupTool-Full --list-profiles
+# List all detected browser profiles with validation status
+BookmarkBackupTool-Full --list-profiles --all-browsers
+BookmarkBackupTool-Full --list-profiles --chrome
+BookmarkBackupTool-Full --list-profiles --firefox
 
-# System status, tasks, and health check
+# System status, browser detection, and health check
 BookmarkBackupTool-Full --status
 ```
 
@@ -368,33 +411,32 @@ BookmarkBackupTool-Full --export --chrome --edge
 # Export all profiles (not just default)
 BookmarkBackupTool-Full --export --all-browsers --all-profiles
 
-# Import bookmarks from backup directory
-BookmarkBackupTool-Full --import --path="D:\MyBackups"
+# Import bookmarks from file (auto-detects browser from file type)
+BookmarkBackupTool-Full --import --path="Bookmarks.json"
+BookmarkBackupTool-Full --import --path="places.sqlite"
+BookmarkBackupTool-Full --import --path="BookmarkBackup.zip"
 
-# Import with validation and repair
-BookmarkBackupTool-Full --import --path="D:\MyBackups" --validate
-
-# Import from backup location
-cmd /c "AvaloniaBookmarkTool.exe --import --path=D:\MyBackups"
-
+# Import to specific browser
+BookmarkBackupTool-Full --import --chrome --path="Bookmarks.json"
+BookmarkBackupTool-Full --import --firefox --path="places.sqlite"
 ```
 
 #### **📅 Scheduled Task Management** *(Full Edition Only)*
 ```powershell
 # Create daily backup task at 2:00 AM
-BookmarkBackupTool-Full --create-task --schedule="02:00" --frequency="Daily"
+BookmarkBackupTool-Full --create-task --frequency=Daily --time=02:00
 
 # Create weekly backup every Sunday at 10:00 PM  
-BookmarkBackupTool-Full --create-task --schedule="22:00" --frequency="Weekly"
+BookmarkBackupTool-Full --create-task --frequency=Weekly --time=22:00
 
 # Create monthly backup on 1st day at 1:00 AM
-BookmarkBackupTool-Full --create-task --schedule="01:00" --frequency="Monthly"
+BookmarkBackupTool-Full --create-task --frequency=Monthly --time=01:00
 
-# View current scheduled task details
+# View current scheduled task details and status
 BookmarkBackupTool-Full --view-task
 
-# Modify existing task to run at 3:00 AM daily
-BookmarkBackupTool-Full --modify-task --schedule="03:00" --frequency="Daily"
+# Modify existing task schedule
+BookmarkBackupTool-Full --modify-task --frequency=Daily --time=03:00
 
 # Delete the scheduled backup task
 BookmarkBackupTool-Full --delete-task
@@ -402,28 +444,40 @@ BookmarkBackupTool-Full --delete-task
 
 #### **🔧 Validation & Maintenance**
 ```powershell
-# Validate bookmark files in directory
-BookmarkBackupTool-Full --validate --path="D:\Backups"
+# Validate bookmark file format and structure
+BookmarkBackupTool-Full --validate="Bookmarks.json"
+BookmarkBackupTool-Full --validate="places.sqlite"
 
-# Repair corrupted bookmark files
-BookmarkBackupTool-Full --repair --path="D:\Backups"
+# Repair corrupted bookmark files (creates backup first)
+BookmarkBackupTool-Full --repair="Bookmarks.json"
 
 # Clean up old log files (older than 30 days)  
 BookmarkBackupTool-Full --cleanup-logs
 ```
 
+### 🎯 **CLI Exit Codes**
+| **Code** | **Meaning** |
+|----------|-------------|
+| **0** | Success - Operation completed successfully |
+| **1** | General error or invalid arguments |
+| **2** | Export/Import operation failed |
+| **3** | Task management operation failed |
+| **4** | File not found |
+| **8** | Validation failed |
+| **9** | Repair failed |
+
 ### 🏢 **Enterprise Automation Examples**
 
 #### **Corporate Backup Scenarios**
 ```powershell
-# Daily automated backup to network share
+# Daily automated backup to network share with ZIP compression
 BookmarkBackupTool-Full --export --all-browsers --all-profiles --zip --path="\\BackupServer\Users\$env:USERNAME"
 
 # Deploy standardized backup schedule company-wide
-BookmarkBackupTool-Full --create-task --schedule="02:00" --frequency="Daily"
+BookmarkBackupTool-Full --create-task --frequency=Daily --time=02:00 --all-browsers --zip
 
-# IT maintenance: validate and cleanup logs
-BookmarkBackupTool-Full --validate --path="\\BackupServer\Users\$env:USERNAME"
+# IT maintenance: validate bookmarks and cleanup logs
+BookmarkBackupTool-Full --validate="\\BackupServer\Users\$env:USERNAME\BookmarkBackup.zip"
 BookmarkBackupTool-Full --cleanup-logs
 ```
 
@@ -431,15 +485,30 @@ BookmarkBackupTool-Full --cleanup-logs
 ```powershell
 # Enterprise deployment script example
 foreach ($computer in $computers) {
-    # Silent install
     Invoke-Command -ComputerName $computer -ScriptBlock {
+        # Silent install
         msiexec /i "BookmarkBackupTool-Full-Setup.msi" /quiet /norestart
         
-        # Configure after installation
-        BookmarkBackupTool-Full --create-task --schedule="02:00" --frequency="Daily"
+        # Wait for installation
+        Start-Sleep -Seconds 10
+        
+        # Configure scheduled backup
+        BookmarkBackupTool-Full --create-task --frequency=Daily --time=02:00 --all-browsers --zip
+        
+        # Verify installation
         BookmarkBackupTool-Full --status
     }
 }
+```
+
+#### **User Migration Script**
+```powershell
+# Export from old machine
+BookmarkBackupTool-Full --export --all-browsers --all-profiles --zip --path="\\MigrationShare\$env:USERNAME"
+
+# Import on new machine
+BookmarkBackupTool-Full --import --chrome --path="\\MigrationShare\$env:USERNAME\BookmarkBackup_*.zip"
+BookmarkBackupTool-Full --import --firefox --path="\\MigrationShare\$env:USERNAME\Firefox_*_BookmarkData_*.sqlite"
 ```
 
 ---
@@ -826,90 +895,7 @@ The application uses a JSON configuration file for persistent settings:
 - Silent installation support
 - Corporate environment integration
 **Use Case**: Enterprise and corporate deployments
-
-### Build Scripts
-
-#### Warning-Free Build Script
-**Location**: `BuildAll-Clean.ps1`
-**Purpose**: Generate all build variants without warnings
-**Usage**: 
-```powershell
-.\BuildAll-Clean.ps1
-```
-
-#### Legacy Build Script
-**Location**: `BuildInstallers.ps1`
-**Purpose**: Build specific installer types
-**Usage**:
-```powershell
-# Build all installers
-.\BuildInstallers.ps1 -All
-
-# Build specific installer
-.\BuildInstallers.ps1 -InnoSetup
-.\BuildInstallers.ps1 -WiX
-.\BuildInstallers.ps1 -NSIS
-```
-
-### Development Environment
-
-#### Project Structure
-```
-AvaloniaBookmarkTool/
-├── Assets/
-│   └── AppIcon.ico                 # Application icon (766 bytes)
-├── Services/                       # Core business logic
-│   ├── BookmarkService.cs         # Bookmark operations
-│   ├── BrowserPaths.cs           # Browser path detection
-│   ├── ConfigService.cs          # Configuration management
-│   ├── Logger.cs                 # Logging system
-│   ├── ProfilesService.cs        # Profile management
-│   ├── SchedulerService.cs       # Task scheduling
-│   └── ZipService.cs             # Archive operations
-├── Views/                         # UI components
-│   ├── MainWindow.axaml          # Main interface
-│   └── MainWindow.axaml.cs       # UI logic
-├── Installer/                     # Installer configurations
-│   ├── InnoSetup/                # Inno Setup scripts
-│   ├── WiX/                      # WiX definitions
-│   └── NSIS/                     # NSIS scripts
-└── bin/                          # Build outputs
-    ├── Release/                  # Executable builds
-    └── Output/                   # Installer files
-```
-
-#### Build Requirements
-- .NET 8.0 SDK
-- Windows 10/11 SDK
-- Inno Setup 6 (for .exe installers)
-- WiX Toolset v4/v6 (for .msi installers)
-- NSIS (optional, for .exe installers)
-
-## 🛠️ Development
-
-### Building from Source
-```powershell
-# Clone repository
-git clone <repository-url>
-cd AvaloniaBookmarkTool
-
-# Restore dependencies
-dotnet restore
-
-# Build and run
-dotnet run
-
-# Build specific target
-dotnet publish AvaloniaBookmarkTool.csproj -c Release -o bin\Release\custom-build
-```
-
-### Testing
-```powershell
-# Run unit tests
-dotnet test
-
-# Run with specific configuration
-dotnet run --configuration Debug
+  
 ```
 
 ## 🔄 Changelog
@@ -1080,7 +1066,7 @@ Configuration for additional languages:
 **Solution Applied**:
 - Added comprehensive network detection (UNC paths, DNS domains, mapped drives)
 - Smart path fallback hierarchy for network users
-- **Result**: Works seamlessly in domain environments
+- **Result**: Works seamlessly in domain environments like ADMIN.SLC.EDU
 
 #### "Application won't start"
 - Ensure .NET 8.0 Desktop Runtime is installed (framework-dependent builds)
@@ -1121,6 +1107,30 @@ This project is licensed under the MIT License - see the LICENSE.txt file for de
 - **Concurrent Operations**: Single-threaded for safety, but fast enough for all practical uses
 - **Large Files**: ZIP compression reduces backup size by 60-80%
 
+## 🤝 Contributing
+
+We welcome contributions from the community! Here's how you can help:
+
+### Getting Started
+1. **Fork** the repository on GitHub
+2. **Clone** your fork locally
+3. **Create** a feature branch: `git checkout -b feature/my-new-feature`
+4. **Install** development dependencies: `dotnet restore`
+5. **Build** and test: `dotnet build && dotnet test`
+
+### Development Guidelines
+- **Code Style**: Follow .NET coding conventions and use EditorConfig
+- **Testing**: Add unit tests for new functionality in the `Tests` project
+- **Documentation**: Update README.md and inline documentation for new features
+- **Commit Messages**: Use clear, descriptive commit messages
+
+### Types of Contributions
+- 🐛 **Bug Fixes**: Report issues or submit fixes
+- ✨ **New Features**: Browser support, UI improvements, CLI enhancements
+- 📚 **Documentation**: Improve README, add code comments, create tutorials
+- 🌍 **Localization**: Translate the application to new languages
+- 🎨 **UI/UX**: Design improvements and user experience enhancements
+
 ### Reporting Issues
 When reporting bugs, please include:
 - **OS and Version**: Windows 10/11 (specify build number if known)
@@ -1130,12 +1140,29 @@ When reporting bugs, please include:
 - **Expected vs Actual Behavior**: What should happen vs what actually happens
 - **Log Files**: Include relevant log entries from `BookmarkTool.log`
 
-### Pull Request Process
-1. **Update** documentation for any new features
-2. **Add tests** that verify your changes work correctly
-3. **Ensure** all existing tests pass: `dotnet test`
-4. **Update** the CHANGELOG.md with details of your changes
-5. **Submit** pull request with clear description of changes
+```
+
+### Code of Conduct
+- **Be Respectful**: Treat all contributors with respect and kindness
+- **Be Collaborative**: Work together to improve the project
+- **Be Patient**: Remember that contributors volunteer their time
+- **Be Constructive**: Provide helpful feedback and suggestions
+
+## 🏆 Contributors
+
+Thanks to all the people who have contributed to this project:
+
+<!-- Add contributor list or link to GitHub contributors page -->
+- [Your Name](https://github.com/your-username) - Initial work and maintenance
+- [Contributor 2](https://github.com/contributor2) - Feature additions
+- [Contributor 3](https://github.com/contributor3) - Bug fixes and testing
+
+### Special Thanks
+- **Avalonia UI Team** - For the excellent UI framework that enabled modern Windows desktop development
+- **Microsoft** - For .NET, Windows development tools, and Windows Installer technology
+- **Community Testers** - For bug reports and feedback on Windows compatibility
+
+## 🛡️ Security
 
 ### Reporting Security Issues
 If you discover a security vulnerability, please:
@@ -1174,12 +1201,21 @@ If you discover a security vulnerability, please:
 ## 📧 Support and Contact
 
 ### Getting Help
-- **📧 Email**: [ayala.solutions@gmail.com] for direct support
+- **📖 Documentation**: Check this README and inline help first
+- **🐛 Issues**: [GitHub Issues](https://github.com/your-repo/issues) for bugs and feature requests
+- **💬 Discussions**: [GitHub Discussions](https://github.com/your-repo/discussions) for questions and community chat
+- **📧 Email**: [support@your-domain.com] for direct support
 
 ### Commercial Support
 For enterprise support, custom development, or consulting services:
-- **Business Email**: [ayala.solutions@gmail.com]
+- **Business Email**: [business@your-domain.com]
+- **Response Time**: 24-48 hours for business inquiries
+- **Services**: Custom integrations, training, priority support
 
+### Community
+- **Discord**: [Join our Discord server](https://discord.gg/your-invite) for real-time chat
+- **Twitter**: [@BookmarkTool](https://twitter.com/BookmarkTool) for updates and news
+- **Blog**: [project-blog.com](https://your-blog.com) for tutorials and announcements
 
 ## 📄 License
 
@@ -1205,6 +1241,10 @@ This project is licensed under the **MIT License** - see the [LICENSE.txt](LICEN
 
 **💻 Perfect for GUI Users • 🤖 Perfect for Automation • 🏢 Perfect for Enterprise**
 
+**⭐ Star this repository if it helped you! ⭐**
+
+[Download Latest Release](https://github.com/your-repo/releases) | [📋 View All CLI Commands](#-command-line-interface---complete-feature-parity) | [Report Issue](https://github.com/your-repo/issues) | [Request Feature](https://github.com/your-repo/discussions)
+
 ### 🎯 What's New in v1.2.0?
 
 ✅ **Complete CLI Implementation** - Every GUI feature now has a CLI equivalent  
@@ -1218,18 +1258,76 @@ This project is licensed under the **MIT License** - see the [LICENSE.txt](LICEN
 
 ```cmd
 # Get comprehensive help
-cmd /c "BookmarkBackupTool.exe --help"
+cmd /c "AvaloniaBookmarkTool.exe --help"
 
 # Export all browsers with ZIP compression
-cmd /c "BookmarkBackupTool.exe --export --all-browsers --zip"
+cmd /c "AvaloniaBookmarkTool.exe --export --all-browsers --zip"
 
 # Create daily backup task at 2 AM
-cmd /c "BookmarkBackupTool.exe --create-task --schedule=02:00 --frequency=Daily"
+cmd /c "AvaloniaBookmarkTool.exe --create-task --schedule=02:00 --frequency=Daily"
 
 # View system status and profiles
-cmd /c "BookmarkBackupTool.exe --status"
-cmd /c "BookmarkBackupTool.exe --list-profiles"
+cmd /c "AvaloniaBookmarkTool.exe --status"
+cmd /c "AvaloniaBookmarkTool.exe --list-profiles"
 ```
+
+*Last Updated: October 9, 2025 | Compatible with: Windows 10/11, .NET 8.0+ | No Admin Rights Required | Complete CLI & GUI Parity*
+
+</div>
+
+</div>
+
+- .NET 8 SDK
+
+Commands:
+
+1) Restore and build
+
+    dotnet restore AvaloniaBookmarkTool/AvaloniaBookmarkTool.csproj
+    dotnet build -c Release AvaloniaBookmarkTool/AvaloniaBookmarkTool.csproj
+
+2) Run
+
+    dotnet run --project AvaloniaBookmarkTool/AvaloniaBookmarkTool.csproj
+
+Icon
+----
+
+- Generate branding icons (PNG + ICO) and install into the project (Windows PowerShell):
+
+    powershell -ExecutionPolicy Bypass -File scripts\generate-icons.ps1 -InstallToProject
+
+- Rebuild to embed the EXE icon:
+
+    dotnet build -c Release AvaloniaBookmarkTool/AvaloniaBookmarkTool.csproj
+
+CLI (Silent Mode)
+-----------------
+
+Run headless to match script behavior:
+
+    dotnet run --project AvaloniaBookmarkTool \
+      -- --export --chrome --edge --firefox --all-profiles --path="D:\\Backups"
+
+All users export (admin only):
+
+    dotnet run --project AvaloniaBookmarkTool \
+      -- --export --all-users --all-browsers --path="D:\\Backups"
+
+Dry-run and Force:
+
+    --dry-run  # simulate, log actions without copying
+    --force    # bypass browser-running check on import (use with caution)
+
+Flags:
+
+- `--export|--import`        Core operations
+- `--chrome|--edge|--firefox` Select browsers
+- `--all-profiles`           Process all profiles per browser
+- `--path=PATH`             Override path (defaults to Desktop)
+- `--config=PATH`           Load defaults from a config JSON
+- `--dry-run`               Simulate without making changes
+- `--force`                 Bypass safety check for running browsers
 
 Scheduler via CLI:
 
@@ -1263,3 +1361,20 @@ Notes
           "CompressBackups": true,
           "LogRetentionDays": 30
         }
+
+Packaging
+---------
+
+- Zip (Windows)
+  - Run: `powershell -ExecutionPolicy Bypass -File scripts\package-zip.ps1`
+  - Output: `dist\AvaloniaBookmarkTool-win-x64.zip`
+
+- MSIX (Windows, optional)
+  - Requires Windows 10 SDK (makeappx.exe, signtool.exe) and a code-signing certificate (PFX) for signing.
+  - Run (unsigned) with your provided metadata:
+    - `powershell -ExecutionPolicy Bypass -File scripts\package-msix.ps1`
+      (defaults in the script: Publisher="CN=Ayala Solution", PublisherDisplay="Ayala Solution", IdentityName="JesusMAyala.BookmarkTool", Version=5.0.0.0)
+  - Run (signed):
+    - `powershell -ExecutionPolicy Bypass -File scripts\package-msix.ps1 -CertPath "C:\certs\yourcert.pfx" -CertPassword "secret"`
+  - Output: `scripts\msix\AvaloniaBookmarkTool_<Version>.msix`
+  - Note: For sideload install, ensure certificate is trusted on target machines.
