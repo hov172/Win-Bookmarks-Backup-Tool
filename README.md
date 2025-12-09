@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![.NET](https://img.shields.io/badge/.NET-8.0%20Self%20Contained-purple.svg)](https://dotnet.microsoft.com/download/dotnet/8.0)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010/11-blue.svg)](https://docs.microsoft.com/en-us/windows/)
-[![Release](https://img.shields.io/badge/Release-v2.1.0-green.svg)](https://github.com/your-repo/releases)
+[![Release](https://img.shields.io/badge/Release-v2.3.0-green.svg)](https://github.com/your-repo/releases)
 [![CLI Support](https://img.shields.io/badge/CLI-100%25%20Parity-brightgreen.svg)](#-command-line-interface)
 [![Self-Contained](https://img.shields.io/badge/Dependencies-Zero-orange.svg)](#-installation)
 [![Enterprise Ready](https://img.shields.io/badge/Enterprise-MSI%20%2B%20EXE-red.svg)](#-professional-installers)
@@ -41,8 +41,8 @@
 
 | **Installer Type** | **Full Edition** | **Lite Edition** | **Best For** |
 |---------------------|------------------|------------------|--------------|
-| **EXE (Inno Setup)** | `BookmarkBackupTool-Full-Setup.exe`<br/>32.75 MB | `BookmarkBackupTool-Lite-Setup.exe`<br/>32.74 MB | Individual users, direct download |
-| **MSI (Windows Installer)** | `BookmarkBackupTool-Full-Setup.msi`<br/>37.17 MB | `BookmarkBackupTool-Lite-Setup.msi`<br/>37.16 MB | Enterprise deployment, Group Policy |
+| **EXE (Inno Setup)** | `BookmarkBackupTool-Full-Setup.exe`<br/>32.86 MB | `BookmarkBackupTool-Lite-Setup.exe`<br/>32.86 MB | Individual users, direct download |
+| **MSI (Windows Installer)** | `BookmarkBackupTool-Full-v2.3.0.msi`<br/>37.18 MB | `BookmarkBackupTool-Lite-v2.3.0.msi`<br/>37.18 MB | Enterprise deployment, Group Policy |
 
 ### ✨ **Installer Features**
 - ✅ **Zero Prerequisites** - No .NET Runtime or dependencies needed
@@ -63,9 +63,40 @@ BookmarkBackupTool-Full --version
 BookmarkBackupTool-Full --help
 ```
 
-## 🆕 **Version 2.1.0 - December 2025** 🎉
+## 🆕 **Version 2.3.0 - December 2025** 🎉
 
-### 🎯 **Smart Import Features** ⭐ **NEW**
+### 🎯 **Dual-Format Export System** ⭐ **NEW**
+- **📦 Native + HTML by Default** - Automatically exports bookmarks in both native format AND HTML for maximum compatibility
+  - Chrome/Edge: JSON (native) + HTML (universal)
+  - Firefox: SQLite (native) + HTML (universal)
+- **🪶 HTML-Only Mode** - Optional lightweight export mode (checkbox in GUI, `--html` flag in CLI)
+- **🔄 Import from Any Format** - Supports importing from native files, HTML files, or ZIP archives
+- **📊 Complete Format Flexibility** - Choose the format that works best for your workflow
+
+### 🛡️ **Smart Browser Detection & Auto-Close** ⭐ **NEW**
+- **🔍 Automatic Browser Detection** - Detects if Chrome, Edge, or Firefox is running before import operations
+- **⚠️ User-Friendly Warnings** - Clear dialog messages when browser conflicts detected
+- **🔄 One-Click Browser Close** - GUI button and CLI prompt to automatically close browsers
+- **✨ Graceful Shutdown** - Attempts CloseMainWindow() first, waits 3 seconds, then force kills if needed
+- **🎯 Intelligent Retry** - Automatically retries import after browser closure with 2-second delay
+
+### 🎨 **Enhanced User Interface**
+- **✅ Visible HTML Export Option** - HTML-only mode checkbox now clearly visible (vertical layout)
+- **📏 Larger Window** - Increased from 700px to 850px height for better content visibility
+- **📜 Scrollable Activity Log** - Fixed 200px height with auto-scrollbar for long operations
+- **🎯 Better Organization** - Export options now in vertical stack for improved clarity
+
+### 🐛 **Critical Bug Fixes**
+- **✅ Fixed Installer Packaging** - All installers now use latest executable (was using October 2025 version)
+- **✅ Fixed String Interpolation** - Corrected missing $ prefix in browser detection logging
+- **✅ Removed Unused Variables** - Cleaned up warningMessage and other unused declarations
+- **✅ Optimized Async Operations** - Removed unnecessary `await Task.CompletedTask` statements
+- **✅ Enhanced Error Handling** - All File.Copy operations now wrapped in try-catch with IOException handling
+- **✅ Performance Improvements** - Changed to async file reads, Task.FromResult for sync methods
+
+### 🏗️ **Previous Features (v2.1.0)**
+
+### 🎯 **Smart Import Features**
 - **🧠 Intelligent Browser Auto-Detection** - Automatically detects target browser from file extension and filename
   - `.sqlite` files → Auto-import to Firefox (no dialog)
   - `.json` + filename contains "Chrome" → Auto-import to Chrome
@@ -84,9 +115,9 @@ BookmarkBackupTool-Full --help
 - **📊 Detailed Feedback** - Success/error dialogs with comprehensive information
 - **🎯 Context-Aware Dialogs** - Browser selection only shown when genuinely needed
 
-### 🏗️ **Previous Features (v2.0.0)**
+### 🏗️ **Core Features (v2.0.0)**
 
-### � **Major Features**
+### 📦 **Major Features**
 - **🎯 Self-Contained Deployment** - Zero .NET Runtime dependency
 - **🌍 PATH Environment Integration** - Global CLI access from anywhere  
 - **🏢 Professional Installers** - Both EXE and MSI formats
@@ -396,11 +427,14 @@ BookmarkBackupTool-Full --status
 
 #### **Backup & Restore Operations**
 ```powershell
-# Export bookmarks from all browsers to default location
+# Export bookmarks from all browsers (creates both native + HTML formats by default)
 BookmarkBackupTool-Full --export --all-browsers
 
-# Export with ZIP compression for easy distribution  
+# Export with ZIP compression for easy distribution (includes both formats)
 BookmarkBackupTool-Full --export --all-browsers --zip
+
+# Export only HTML files (lightweight, universal compatibility)
+BookmarkBackupTool-Full --export --all-browsers --html
 
 # Export to specific directory
 BookmarkBackupTool-Full --export --all-browsers --path="D:\MyBackups"
@@ -415,6 +449,7 @@ BookmarkBackupTool-Full --export --all-browsers --all-profiles
 BookmarkBackupTool-Full --import --path="Bookmarks.json"
 BookmarkBackupTool-Full --import --path="places.sqlite"
 BookmarkBackupTool-Full --import --path="BookmarkBackup.zip"
+BookmarkBackupTool-Full --import --path="Bookmarks.html"
 
 # Import to specific browser
 BookmarkBackupTool-Full --import --chrome --path="Bookmarks.json"
@@ -1378,3 +1413,4 @@ Packaging
     - `powershell -ExecutionPolicy Bypass -File scripts\package-msix.ps1 -CertPath "C:\certs\yourcert.pfx" -CertPassword "secret"`
   - Output: `scripts\msix\AvaloniaBookmarkTool_<Version>.msix`
   - Note: For sideload install, ensure certificate is trusted on target machines.
+
