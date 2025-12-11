@@ -318,7 +318,7 @@ powershell -File scripts\package-msix.ps1 -CertPath ... -CertPassword ...
 - Local-only operations  
 
 Report vulnerabilities:  
-**security@your-domain.com**
+**ayala.solutions@gmaill.com**
 
 ---
 
