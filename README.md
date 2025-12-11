@@ -120,7 +120,7 @@ BookmarkBackupTool.exe --export --all-browsers
 BookmarkBackupTool.exe --export --all-browsers --zip
 BookmarkBackupTool.exe --export --all-browsers --html
 ```
-
+---
 ### Import
 ```powershell
 BookmarkBackupTool.exe --import --path "Bookmarks.json"
@@ -132,8 +132,6 @@ BookmarkBackupTool.exe --import --path "Backup.zip"
 ```powershell
 BookmarkBackupTool.exe --create-task --frequency Daily --time 02:00 --all-browsers
 ```
-
----
 
 # 🌟 Core Features
 
@@ -262,30 +260,6 @@ Example:
 }
 ```
 
----
-
-# 🛠 Development
-
-### Build
-```powershell
-dotnet restore AvaloniaBookmarkTool/AvaloniaBookmarkTool.csproj
-dotnet build -c Release AvaloniaBookmarkTool/AvaloniaBookmarkTool.csproj
-```
-
-### Run
-```powershell
-dotnet run --project AvaloniaBookmarkTool
-```
-
----
-
-# 📦 Packaging Scripts
-
-### ZIP
-```powershell
-powershell -File scripts\package-zip.ps1
-```
-
 ### MSIX
 ```powershell
 powershell -File scripts\package-msix.ps1 -CertPath ... -CertPassword ...
@@ -311,8 +285,7 @@ powershell -File scripts\package-msix.ps1 -CertPath ... -CertPassword ...
 ---
 
 # 🔐 Security
-
-- No network communication  
+  
 - Validates all input files  
 - Automatic backups before modifying anything  
 - Local-only operations  
@@ -322,11 +295,6 @@ Report vulnerabilities:
 
 ---
 
-# 🤝 Contributing
-
-Pull requests welcome!  
-Please include tests, documentation updates, and CHANGELOG entries.
-
 ---
 
 # 📄 License
@@ -334,4 +302,4 @@ Please include tests, documentation updates, and CHANGELOG entries.
 MIT License
 ---
 
-# 🎉 Thanks for using Bookmark Backup Tool!
+ 🎉 Thanks for using Bookmark Backup Tool!
