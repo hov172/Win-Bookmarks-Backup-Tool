@@ -16,7 +16,13 @@
 [![Release](https://img.shields.io/badge/Release-v2.3.0-green.svg)]()
 [![CLI Parity](https://img.shields.io/badge/CLI-100%25%20Parity-brightgreen.svg)]()
 [![Self-Contained](https://img.shields.io/badge/Dependencies-None-orange.svg)]()
+---
 
+**This app if for Windows use. I also built both PowerShell and macOS applications based on a script. These apps\scripts allow users to manage their own bookmarks, and both versions include command-line options for administrators.**
+
+**Other Options**
+- 💻 **MacOS**: [https://github.com/hov172/MacOS-Bookmarks-Backup-Tool](https://github.com/hov172/MacOS-Bookmarks-Backup-Tool)  
+- 🖥️ **Windows Powershell**: [https://github.com/hov172/PS-Bookmark-Backup-Tool](https://github.com/hov172/PS-Bookmark-Backup-Tool)
 ---
 
 # 🎯 Editions
