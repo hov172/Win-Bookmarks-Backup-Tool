@@ -318,7 +318,7 @@ powershell -File scripts\package-msix.ps1 -CertPath ... -CertPassword ...
 - Local-only operations  
 
 Report vulnerabilities:  
-**ayala.solutions@gmaill.com**
+*file an issue**
 
 ---
 
@@ -331,8 +331,7 @@ Please include tests, documentation updates, and CHANGELOG entries.
 
 # 📄 License
 
-MIT License — see [LICENSE.txt](LICENSE.txt)
-
+MIT License
 ---
 
 # 🎉 Thanks for using Bookmark Backup Tool!
